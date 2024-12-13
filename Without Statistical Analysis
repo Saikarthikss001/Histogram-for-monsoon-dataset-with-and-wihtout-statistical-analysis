@@ -1,0 +1,37 @@
+import matplotlib.pyplot as plt
+
+wet_days_rainfall = [10.0, 11.0, 10.5, 9.6, 9.8, 10.0, 6.0, 6.5, 10.0, 9.5, 
+                     7.0, 8.0, 8.9, 9.2, 7.6, 7.5, 7.0, 8.2, 9.7, 7.6, 9.5, 7.2, 
+                     9.5, 10.0, 10.3, 11.0, 11.6, 9.6, 9.2, 6.0, 6.2, 5.0, 9.0, 
+                     4.0, 3.0, 2.1, 1.2, 4.1, 1.9, 2.0, 6.0, 4.0, 5.6, 2.3, 6.4, 
+                     1.9, 6.2, 6.3, 4.2, 1.9, 4.5, 3.2, 3.5, 3.4, 4.0, 5.6, 5.0, 
+                     6.4, 6.2, 6.0, 2.0, 4.2, 5.0, 6.0, 7.2, 8.0, 8.2, 6.5, 8.0, 
+                     6.5, 6.9, 7.0, 7.5, 6.5, 6.7, 7.2, 8.0, 11.0, 10.0, 14.0, 
+                     15.6, 12.0, 10.0, 12.5, 14.5, 15.0, 14.0, 14.9, 13.9, 16.0, 
+                     17.5, 8.0, 9.0, 10.9, 8.0]
+dry_days_rainfall = [0.0, 0.0, 0.0, 0.0, 0.0]
+
+
+num_bins = 10
+
+plt.figure(figsize=(12, 6))
+
+# Plot histogram for wet days
+plt.subplot(1, 2, 1)
+plt.hist(wet_days_rainfall, bins=num_bins, color='blue', alpha=0.7, edgecolor='black')
+plt.title('Wet Days Rainfall')
+plt.xlabel('Rainfall (mm)')
+plt.ylabel('Frequency')
+plt.grid(True)
+
+# Plot histogram for dry days
+plt.subplot(1, 2, 2)
+plt.hist(dry_days_rainfall, bins=num_bins, color='orange', alpha=0.7, edgecolor='black')
+plt.title('Dry Days Rainfall')
+plt.xlabel('Rainfall (mm)')
+plt.ylabel('Frequency')
+plt.grid(True)
+
+plt.suptitle('Histograms for Wet and Dry Days')
+plt.tight_layout()
+plt.show()
